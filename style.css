@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 :root {
     --header-color: #1565C0;
     --color-fundo: #E3F2FD;
@@ -6,6 +7,7 @@
     --cor-titulo: #1976D2;
     --font-titulo: "Sail", system-ui;
     --banner: url(rc.jpg);
+    --text-banner: "Cinzel", serif;
 }
 
 header{
@@ -34,4 +36,10 @@ header a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.banner h2 {
+    font-family: var(--text-banner);
+    color: white;
+    font-size: 40px;
 }
