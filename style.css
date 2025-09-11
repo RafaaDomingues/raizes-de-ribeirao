@@ -6,7 +6,7 @@
     --cor-cards: #BBDEFB;
     --cor-titulo: #1976D2;
     --font-titulo: "Sail", system-ui;
-    --banner: url(rc.jpg);
+    --banner: url(rc.jpg) no repeat center center/cover;
     --text-banner: "Cinzel", serif;
 }
 
