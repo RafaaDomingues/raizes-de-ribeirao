@@ -31,9 +31,6 @@ header a {
 
 .banner {
     background-image: var(--color-fundo);
-    background-size: cover;
-    width: 100%;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,4 +40,9 @@ header a {
     font-family: var(--text-banner);
     color: white;
     font-size: 40px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
 }
