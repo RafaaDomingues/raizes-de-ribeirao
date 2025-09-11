@@ -48,5 +48,5 @@ header a {
 .banner img {
     width: 90%;
     height: 100%;
-    align-items: center;
+    object-fit: cover;
 }
