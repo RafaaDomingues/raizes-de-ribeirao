@@ -1,8 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+:root {
+    --header-color: #1565C0;
+    --color-fundo: #E3F2FD;
+    --cor-cards: #BBDEFB;
+    --cor-titulo: #1976D2;
+    --font-titulo: "Sail", system-ui;
+    --banner: url(rc.jpg);
+}
+
 header{
-    background-color: #1565C0;
+    background-color: var(--header-color);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
+}
+
+header h1 {
+    font-family:var(--font-titulo) ;
+    font-size: 20px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner {
+    background-image: var(--banner) ;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
