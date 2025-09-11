@@ -30,7 +30,7 @@ header a {
 }
 
 .banner {
-    background-image: var(--banner) ;
+    background-image: var(--color-fundo);
     background-size: cover;
     width: 100%;
     height: auto;
