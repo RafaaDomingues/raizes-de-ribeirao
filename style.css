@@ -30,19 +30,23 @@ header a {
 }
 
 .banner {
-    background-image: var(--color-fundo);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: var(--color-fundo);
+   position: relative;
+   width:100%;
+   height: 950px;
 }
 
 .banner h2 {
     font-family: var(--text-banner);
     color: white;
     font-size: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
 }
 
 .banner img {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: 100%;
+    align-items: center;
 }
