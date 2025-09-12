@@ -40,7 +40,8 @@ header a {
    justify-content: center;
    align-items: center;
    position: relative;
-   
+   padding-top: 15vh;
+   box-sizing: border-box;
 }
 
 .banner h2 {
@@ -59,4 +60,5 @@ header a {
     left: 50%;
     transform: translate(-50%);
     z-index: -1;
+    border-radius: 20px;
 }
