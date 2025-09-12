@@ -18,7 +18,8 @@ header{
     background-color: var(--header-color);
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 250px;
     align-items: center;
     padding: 15px 30px;
 }
