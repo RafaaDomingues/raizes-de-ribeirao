@@ -65,6 +65,10 @@ header a {
     border-radius: 20px;
 }
 
+.historia{
+    max-width: 963px;
+}
+
 .historia .container {
     padding: 40px;
     display: flex;
