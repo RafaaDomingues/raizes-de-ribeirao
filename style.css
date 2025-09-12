@@ -34,6 +34,7 @@ header a {
 }
 
 .banner {
+    margin-top: -2vh;
    top: 15%;
    width:100%;
    height: 650px;
