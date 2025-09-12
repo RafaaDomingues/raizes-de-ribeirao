@@ -11,6 +11,7 @@
 
 body {
     background-color: var(--color-fundo);
+    margin: 0%;
 }
 
 header{
