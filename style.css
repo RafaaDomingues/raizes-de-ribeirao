@@ -87,7 +87,7 @@ header a {
     max-width: 500px;
 }
 .historia h3 {
-    font-size: 24px;
+    font-size: 30px;
     color: var(--cor-titulo);
     margin-bottom: 10px;
     position: absolute;
@@ -97,6 +97,7 @@ header a {
 .historia p {
     line-height: 1.6;
     text-align: justify;
+    font-size: 20px;
 }
 
 .container {
