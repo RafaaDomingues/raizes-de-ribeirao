@@ -9,6 +9,10 @@
     --text-banner: "Cinzel", serif;
 }
 
+body {
+    background-color: var(--color-fundo);
+}
+
 header{
     background-color: var(--header-color);
     color: white;
