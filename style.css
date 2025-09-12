@@ -34,6 +34,8 @@ header a {
    height: 950px;
    display: flex;
    justify-content: center;
+   align-items: center;
+   position: relative;
    
 }
 
@@ -41,14 +43,16 @@ header a {
     font-family: var(--text-banner);
     color: white;
     font-size: 40px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% -50%);
-    position: relative;
+    text-align: center;
 }
 
 .banner img {
-    width: 95%;
-    height: 65%;
+    width: 98%;
+    height: 88%;
     object-fit: cover;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
 }
