@@ -53,10 +53,9 @@ header a {
 
 .banner img {
     width: 98%;
-    height: 84%;
+    height: 90%;
     object-fit: cover;
     position: absolute;
-    top: 15%;
     left: 50%;
     transform: translate(-50%);
     z-index: -1;
