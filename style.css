@@ -19,7 +19,7 @@ header{
     color: white;
     display: flex;
     justify-content: space-evenly;
-    gap: 250px;
+    gap: 300px;
     align-items: center;
     padding: 15px 30px;
 }
