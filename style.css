@@ -29,7 +29,7 @@ header a {
 }
 
 .banner {
-   background: var(--color-fundo);
+   background-color: var(--color-fundo);
    width:100%;
    height: 950px;
    display: flex;
