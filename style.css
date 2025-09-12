@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
 :root {
     --header-color: #1565C0;
     --color-fundo: #E3F2FD;
@@ -14,7 +15,7 @@ body {
     margin: 0%;
 }
 
-header{
+header {
     background-color: var(--header-color);
     color: white;
     display: flex;
@@ -25,7 +26,7 @@ header{
 }
 
 header h1 {
-    font-family:var(--font-titulo) ;
+    font-family: var(--font-titulo);
     font-size: 22px;
 }
 
@@ -37,13 +38,13 @@ header a {
 
 .banner {
     margin-top: -2vh;
-   top: 15%;
-   width:100%;
-   height: 650px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: relative;
+    top: 15%;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .banner h2 {
@@ -70,4 +71,26 @@ header a {
     gap: 30px;
     align-items: center;
 }
-.texto 
+
+.texto {
+    flex: 2;
+}
+
+.historia h3 {
+    font-size: 24px;
+    color: var(--cor-titulo);
+    margin-bottom: 10px;
+}
+
+.historia p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.video {
+    flex: 1;
+    width: 100%;
+    height: 200px;
+    background: #222;
+    border-radius: 8px;
+}
