@@ -64,3 +64,10 @@ header a {
     border-radius: 20px;
 }
 
+.historia {
+    padding: 40px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.texto 
