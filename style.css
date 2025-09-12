@@ -73,9 +73,12 @@ header a {
 }
 
 .texto {
-    flex: 2;
+    flex: 1;
 }
 
+.video{
+    max-width: 500px;
+}
 .historia h3 {
     font-size: 24px;
     color: #004080;
