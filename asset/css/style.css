@@ -162,6 +162,11 @@ footer {
     margin-top: 20px;
 }
 
+footer h1 {
+    font-family: var(--font-titulo);
+    font-size: 22px;
+}
+
 footer p {
     margin: 0;
     font-size: 14px;
