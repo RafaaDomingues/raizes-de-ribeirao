@@ -109,13 +109,13 @@ header a {
 .trilhas {
       text-align: center;
       padding: 40px;
-      background: #f9f9f9;
+      background: var(--color-fundo);
     }
 
     .trilhas h3 {
       font-size: 24px;
       margin-bottom: 20px;
-      color: #004080;
+      color: var(--cor-titulo);
     }
 
     .botoes {
@@ -136,18 +136,18 @@ header a {
     }
 
     .gastronomia {
-      background: #a2d2ff;
-      color: #004080;
+      background: var(--cor-titulo);
+      color: var(--color-fundo);
     }
 
     .aventura {
-      background: #bde0fe;
-      color: #004080;
+      background: var(--cor-titulo);
+      color: var(--color-fundo);
     }
 
     .hospedagem {
-      background: #caffbf;
-      color: #004080;
+      background: var(--cor-titulo);
+      color: var(--color-fundo);
     }
 
     .botoes a:hover {
