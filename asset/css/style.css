@@ -106,3 +106,64 @@ header a {
     height: 300px;
 }
 
+.trilhas {
+      text-align: center;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+
+    .trilhas h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #004080;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .botoes a {
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .gastronomia {
+      background: #a2d2ff;
+      color: #004080;
+    }
+
+    .aventura {
+      background: #bde0fe;
+      color: #004080;
+    }
+
+    .hospedagem {
+      background: #caffbf;
+      color: #004080;
+    }
+
+    .botoes a:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    footer {
+      background: var(--header-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
