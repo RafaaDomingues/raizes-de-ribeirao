@@ -8,6 +8,7 @@
     --cor-titulo: #1976D2;
     --font-titulo: "Sail", system-ui;
     --text-banner: "Cinzel", serif;
+    --cor-botoes: #90CAF9;
 }
 
 body {
@@ -65,7 +66,7 @@ header a {
     border-radius: 20px;
 }
 
-.historia{
+.historia {
     max-width: 963px;
 }
 
@@ -83,9 +84,10 @@ header a {
     flex: 1;
 }
 
-.video{
+.video {
     max-width: 500px;
 }
+
 .historia h3 {
     font-size: 30px;
     color: var(--cor-titulo);
@@ -107,63 +109,61 @@ header a {
 }
 
 .trilhas {
-      text-align: center;
-      padding: 40px;
-      background: var(--color-fundo);
-    }
+    text-align: center;
+    padding: 40px 20px;
+}
 
-    .trilhas h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: var(--cor-titulo);
-    }
+.trilhas h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--cor-titulo);
+    font-family: var(--font-titulo);
+}
 
-    .botoes {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
 
-    .botoes a {
-      text-decoration: none;
-      padding: 15px 30px;
-      border-radius: 25px;
-      font-size: 18px;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
-    }
+.botoes a {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
 
-    .gastronomia {
-      background: var(--cor-titulo);
-      color: var(--color-fundo);
-    }
+.botao {
+    display: inline-block;
+    background-color: var(--cor-botoes);
+    color: var(--cor-titulo);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 40px;
+    transition: 0.3s;
+}
 
-    .aventura {
-      background: var(--cor-titulo);
-      color: var(--color-fundo);
-    }
+.botoao a:hover {
+    background-color: var(--cor-titulo);
+    color: var(--color-fundo);
+    transform: scale(1.05);
+}
 
-    .hospedagem {
-      background: var(--cor-titulo);
-      color: var(--color-fundo);
-    }
+footer {
+    background: var(--header-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
 
-    .botoes a:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-
-    footer {
-      background: var(--header-color);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 14px;
-    }
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
