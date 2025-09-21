@@ -33,3 +33,84 @@ const trilhaGastronomia = [
     { nome: "Parada da Serra", lat: -23.27476717000394, lng: -49.75163014398363 },
     { nome: "Queijaria Bela Vista", lat: -23.33101479632104, lng: -49.8360618331078 }
 ];
+
+
+function horaAventura(tipo){
+    switch (tipo) {
+  case "trilhaAventura":
+    console.log("Hoje é segunda-feira.");
+    break;
+  case "TrilhaHospedagem":
+    console.log("Hoje é terça-feira.");
+    break;
+  case "TrilhaGastronomia":
+    addGastronomiaMaker();
+    break;
+}
+}
+
+
+
+const map = L.map('map' ).setView([-23.1939, -49.7578],15) 
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+
+const gastronomiaIcon = L.icon({
+  iconUrl: 'cascata.png',
+  iconSize:     [19, 18],         // largura x altura
+  iconAnchor:   [9, 18],          // base central do ícone
+  popupAnchor:  [0, -18]          // popup acima do ícone
+});
+
+
+
+function addGastronomiaMaker(){
+    for(let i = 0; i < trilhaGastronomia.length; i++) {
+    L.marker([trilhaGastronomia[i].lat,trilhaGastronomia[i].lng],{ icon: gastronomiaIcon }).addTo(map);
+}
+}
+
+
+horaAventura('TrilhaGastronomia')
+
+// pontoA.bindPopup(`
+//   <b>Cascata</b><br>
+//   <a href="https://ribeiraoclaro.pr.gov.br/" target="_blank">Saiba mais</a>
+// `).openPopup();
+
+
+// var popup = L.popup();
+
+// function onMapClick(e) {
+//     popup
+//         .setLatLng(e.latlng)
+//         .setContent("Anota as cordenadas: " + e.latlng.toString())
+//         .openOn(map);
+// }
+
+// map.on('click', onMapClick);
+
+
+
+// function mapear(lista){
+// L.Routing.control({
+//   waypoints: [
+//     L.latLng(-23.18764947748166, -49.710488076778944),
+//     L.latLng(-23.19694023285064, -49.75810412396544)
+//   ],
+//    createMarker: () => null, // 👈 isso evita os marcadores automáticos
+//   lineOptions: {
+//     styles: [{ color: 'red', weight: 4 }]
+//   },
+//   addWaypoints: false,
+//   routeWhileDragging: false,
+//   draggableWaypoints: false
+
+// }).addTo(map);
+
+// }
+
