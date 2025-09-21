@@ -60,8 +60,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 const gastronomiaIcon = L.icon({
-  iconUrl: 'cascata.png',
-  iconSize:     [19, 18],         // largura x altura
+  iconUrl: 'asset/img/icon-gastronomia.png',
+  iconSize:     [30, 35],         // largura x altura
   iconAnchor:   [9, 18],          // base central do ícone
   popupAnchor:  [0, -18]          // popup acima do ícone
 });
@@ -69,13 +69,33 @@ const gastronomiaIcon = L.icon({
 
 
 function addGastronomiaMaker(){
+    lista =[]
     for(let i = 0; i < trilhaGastronomia.length; i++) {
      var x = L.marker([trilhaGastronomia[i].lat,trilhaGastronomia[i].lng],{ icon: gastronomiaIcon }).addTo(map);
         x.bindPopup(`
         //   <b>${trilhaGastronomia[i].nome}</b><br>
         //   <a href="https://ribeiraoclaro.pr.gov.br/" target="_blank">Saiba mais</a>
         // `).openPopup();
+        lista.push([trilhaGastronomia[i].lat,trilhaGastronomia[i].lng])
     }
+    mapear(lista)
+}
+
+
+
+function mapear(lista) {
+    const waypoints = lista.map(coord => L.latLng(coord[0], coord[1]));
+    L.Routing.control({
+        waypoints: waypoints,
+        createMarker: () => null,
+        lineOptions: {
+            styles: [{ color: 'red', weight: 4 }]
+        },
+        addWaypoints: false,
+        routeWhileDragging: false,
+        draggableWaypoints: false,
+        show: false
+    }).addTo(map);
 }
 
 
@@ -100,21 +120,5 @@ horaAventura('TrilhaGastronomia')
 
 
 
-// function mapear(lista){
-// L.Routing.control({
-//   waypoints: [
-//     L.latLng(-23.18764947748166, -49.710488076778944),
-//     L.latLng(-23.19694023285064, -49.75810412396544)
-//   ],
-//    createMarker: () => null, // 👈 isso evita os marcadores automáticos
-//   lineOptions: {
-//     styles: [{ color: 'red', weight: 4 }]
-//   },
-//   addWaypoints: false,
-//   routeWhileDragging: false,
-//   draggableWaypoints: false
 
-// }).addTo(map);
-
-// }
 
