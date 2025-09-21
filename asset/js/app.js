@@ -70,8 +70,12 @@ const gastronomiaIcon = L.icon({
 
 function addGastronomiaMaker(){
     for(let i = 0; i < trilhaGastronomia.length; i++) {
-    L.marker([trilhaGastronomia[i].lat,trilhaGastronomia[i].lng],{ icon: gastronomiaIcon }).addTo(map);
-}
+     var x = L.marker([trilhaGastronomia[i].lat,trilhaGastronomia[i].lng],{ icon: gastronomiaIcon }).addTo(map);
+        x.bindPopup(`
+        //   <b>${trilhaGastronomia[i].nome}</b><br>
+        //   <a href="https://ribeiraoclaro.pr.gov.br/" target="_blank">Saiba mais</a>
+        // `).openPopup();
+    }
 }
 
 
