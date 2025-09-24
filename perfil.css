@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+:root {
+    --header-color: #1565C0;
+    --color-fundo: #E3F2FD;
+    --cor-cards: #BBDEFB;
+    --cor-titulo: #1976D2;
+    --font-titulo: "Sail", system-ui;
+    --text-banner: "Cinzel", serif;
+    --cor-botoes: #90CAF9;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -90px;
+}
+
+.formulario {
+  background-color: var(--cor-cards);
+  padding: 30px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.formulario h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: var(--cor-titulo);
+  font-family: var(--text-banner);
+}
+
+.formulario input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+}
+
+.formulario button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--header-color);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario button:hover {
+  background-color: var(--cor-botoes);
+}
+
+.formulario p {
+  margin: 15px 0;
+  color: #555;
+}
+
+.formulario a {
+  color: var(--cor-titulo);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.formulario a:hover {
+  text-decoration: underline;
+}
