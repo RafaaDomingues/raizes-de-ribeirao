@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+:root {
+    --header-color: #1565C0;
+    --color-fundo: #E3F2FD;
+    --cor-cards: #BBDEFB;
+    --cor-titulo: #1976D2;
+    --font-titulo: "Sail", system-ui;
+    --text-banner: "Cinzel", serif;
+    --cor-botoes: #90CAF9;
+}
+
+body {
+    background-color: var(--color-fundo);
+    margin: 0%;
+}
+
+main {
+  padding: 20px;
+  background-color: var(--color-fundo); /* fundo azul claro */
+  min-height: 80vh; /* ocupa bem a tela */
+}
+
+.local h2 {
+  font-size: 1.8rem;
+  color: var(--cor-titulo);
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: var(--text-banner);
+  letter-spacing: 1px;
+  position: relative;
+  margin-top: 5%;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: var(--cor-cards); 
+  border-radius: 15px;
+  padding: 15px;
+  gap: 20px;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  position: relative;
+  margin-top: 5%;
+}
+
+.image-box {
+  flex: 1;
+  max-width: 250px;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ======== INFORMAÇÕES ======== */
+.info {
+  flex: 2;
+  color: #1d1d1d;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.info h3 {
+  font-size: 1.6rem;
+  color: #2b5fa0;
+  margin-bottom: 12px;
+  font-family: var(--font-titulo);
+  letter-spacing: 1px;
+}
+
+.info p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
