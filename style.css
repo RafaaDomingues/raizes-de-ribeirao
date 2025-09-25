@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+:root {
+    --header-color: #1565C0;
+    --color-fundo: #E3F2FD;
+    --cor-cards: #BBDEFB;
+    --cor-titulo: #1976D2;
+    --font-titulo: "Sail", system-ui;
+    --text-banner: "Cinzel", serif;
+    --cor-botoes: #90CAF9;
+}
+
+body {
+    background-color: var(--color-fundo);
+    margin: 0%;
+}
+
+header {
+    background-color: var(--header-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 75%;
+    align-items: center;
+    max-height: 80px;
+}
+
+nav a {
+    margin: 0 20px;
+}
+
+header h1 {
+    font-family: var(--font-titulo);
+    font-size: 22px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.banner {
+    margin-top: -2vh;
+    top: 15%;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.banner h2 {
+    font-family: var(--text-banner);
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+.banner img {
+    width: 98%;
+    height: 90%;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.historia {
+    max-width: 963px;
+}
+
+.historia .container {
+    padding: 40px;
+    display: flex;
+    gap: 95px;
+    align-items: center;
+    justify-content: space-between;
+    left: 25vh;
+    position: relative;
+}
+
+.texto {
+    flex: 1;
+}
+
+.video {
+    max-width: 500px;
+}
+
+.historia h3 {
+    font-size: 30px;
+    color: var(--cor-titulo);
+    margin-bottom: 10px;
+    position: absolute;
+    left: 200px;
+}
+
+.historia p {
+    text-align: justify;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 300px;
+}
+
+.trilhas {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.trilhas h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--cor-titulo);
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.botoes a {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.botao {
+    display: inline-block;
+    background-color: var(--cor-botoes);
+    color: var(--cor-titulo);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.botoao a:hover {
+    background-color: var(--cor-titulo);
+    color: var(--color-fundo);
+    transform: scale(1.05);
+}
+
+footer {
+    background: var(--header-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer h1 {
+    font-family: var(--font-titulo);
+    font-size: 22px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
