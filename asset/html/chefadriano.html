@@ -1,49 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chefe Adriano</title>
-  <link rel="stylesheet" href="html/css/rota.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="asset/img/logotipo.png">
+  <title>Mapa Gastronômico</title>
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #f0f6ff; /* fundo azul bem claro */
+      color: #000;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #1d5bbf; /* azul forte */
+      color: white;
+      text-align: right;
+      padding: 12px 30px;
+    }
+
+    header h1 {
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    main {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .local h2 {
+      font-size: 26px;
+      color: #3b6db4;
+      margin-bottom: 25px;
+      font-variant: small-caps;
+    }
+
+    .card {
+      background-color: #d9ebfa;
+      border-radius: 12px;
+      padding: 25px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .image-box img {
+      width: 320px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .info {
+      text-align: left;
+      max-width: 400px;
+    }
+
+    .info h3 {
+      font-size: 22px;
+      color: #3b6db4;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .info p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #1d3d7a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+
+    footer h4 {
+      font-size: 22px;
+      font-family: "Times New Roman", serif;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      font-size: 14px;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <header>
-        <h1>Raízes <br> de Ribeirão</h1>
-        <nav>
-            <a href="itinerario.html">Trilhas</a>
-            <a href="perfil.html">Perfil</a>
-        </nav>
-    </header>
-  <section class="local-selecionado">
-    <h2>Local selecionado</h2>
-
-    <div class="card-local">
-      <div class="imagem-local">
-        <h3>informações</h3>
-        <img src="chefeadriano.jpeg" alt="Foto do Empório e Restaurante Chef Adriano">
-      </div>
-
-      <div class="texto-local">
-        <h2>Emporio e Restaurante Chef Adriano</h2>
-        <p>
-          Empório e Restaurante com várias variedades e ótima qualidade! <br>
-          Rua Deolindo Panichi, 790 - Centro, Ribeirão Claro - PR, 86410-000 <br>
-          Aberto de terça-feira a sábado, das 13:00 às 22:00. <br>
-          Telefone: (43) 99195-9252
-        </p>
-      </div>
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+      <h1>Mapa Gastronomico</h1>
     </div>
-  </section>
-  <footer>
-        <h1>Raízes <br>de Ribeirão</h1>
-        <p>Onde a história encontra a natureza.</p>
-    </footer>
+  </header>
 
-</main>  
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <section class="local">
+      <h2>Local selecionado</h2>
+      <div class="card">
+        <div class="image-box">
+          <img src="chefeadriano.jpeg" alt="Empório e Restaurante Chef Adriano">
+        </div>
+        <div class="info">
+          <h3>Emporio e Restaurante <br> Chef Adriano</h3>
+          <p>
+            Empório e Restaurante com várias variedades e ótima qualidade! <br>
+            Rua Deolindo Panichi, 790 - Cenirio, Ribeirão Claro - PR, 86410-000 <br>
+            Aberto de terça-feira à sábado, das 13:00 às 22:00. <br>
+            Telefone: (43) 99195-9252
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <h4>Raízes de Ribeirão</h4>
+      <p>Onde a história encontra a natureza.</p>
+    </div>
+  </footer>
 </body>
 </html>
-
-
