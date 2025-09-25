@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trilhas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+
 </head>
+
 <body>
-        <header>
+    <header>
         <h1>Raízes <br> de Ribeirão</h1>
         <nav>
             <a href="index.html">Home</a>
@@ -20,14 +32,20 @@
             <h2>itinerario</h2>
         </div>
     </section>
+    <section class="mapa">
+        <div id="map" style="height:400px;width: 600px;"></div>
+        <script src="asset/js/app.js"></script>
+        <span id="object"></span>
+    </section>
 
 
 
-    
+
     <footer>
         <h1>Raízes <br>de Ribeirão</h1>
         <p>Onde a história encontra a natureza.</p>
     </footer>
-    
+
 </body>
+
 </html>
