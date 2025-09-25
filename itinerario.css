@@ -12,11 +12,11 @@
 }
 main {
   padding: 40px;
-  background-color: var(--color-fundo); /* fundo azul clarinho */
-  min-height: 70vh; /* ocupa boa parte da tela */
+  background-color: var(--color-fundo); 
+  min-height: 70vh; 
 }
 
-.mapa {
+#map {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -25,7 +25,7 @@ main {
 }
 
 .local-selecionado h2 {
-  color: var(--cor-titulo); /* azul elegante */
+  color: var(--cor-titulo); 
   font-size: 28px;
   margin-bottom: 20px;
 }
@@ -34,7 +34,7 @@ main {
   display: flex;
   align-items: flex-start;
   gap: 30px;
-  background-color: var(--cor-botoes); /* azul mais forte pra destacar */
+  background-color: var(--cor-botoes); 
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -74,3 +74,36 @@ main {
   color: #333;
 }
 
+#menu {
+    padding: 20px;
+    background-color: var(--cor-cards); 
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#menu label {
+    font-family: var(--text-banner);
+    color: var(--cor-titulo);
+    font-size: 18px;
+}
+
+#rota {
+    padding: 8px 12px;
+    border: 1px solid var(--cor-titulo);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: var(--text-banner);
+    cursor: pointer;
+    background-color: var(--color-fundo);
+    transition: all 0.2s ease-in-out;
+}
+
+#rota:hover {
+    border-color: var(--header-color);
+    box-shadow: 0 0 5px rgba(21,101,192,0.3);
+}
