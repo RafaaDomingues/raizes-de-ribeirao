@@ -57,7 +57,10 @@ header {
   font-size: 1rem;
 }
 
-.formulario button {
+
+input[type="submit"]:active {
+  transform: translateY(2px);
+  box-shadow: none;
   width: 100%;
   padding: 12px;
   margin-top: 10px;
@@ -68,9 +71,11 @@ header {
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s;
+
 }
 
-.formulario button:hover {
+
+input[type="submit"]:hover {
   background-color: var(--cor-botoes);
 }
 
