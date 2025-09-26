@@ -87,15 +87,63 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 
+let grupoDeRotas = L.layerGroup().addTo(map);
+
+function limparRotas() {
+    grupoDeRotas.clearLayers();
+}
+
+function mapear(lista) {
+    limparRotas();
+
+    for (let i = 0; i < lista.length - 1; i++) {
+        const waypoints = [
+            L.latLng(lista[i][0], lista[i][1]),
+            L.latLng(lista[i+1][0], lista[i+1][1])
+        ];
+
+        const control = L.Routing.control({
+            waypoints: waypoints,
+            createMarker: () => null,
+            addWaypoints: false,
+            routeWhileDragging: false,
+            draggableWaypoints: false,
+            show: false,
+            router: L.Routing.osrmv1({
+        serviceUrl: 'https://router.project-osrm.org/route/v1',
+        alternatives: false   // força rota única
+    })
+        });
+
+        // quando a rota for encontrada, desenha a linha
+        control.on('routesfound', function(e) {
+            const route = e.routes[0];
+            const line = L.Routing.line(route, {
+                styles: [{ color: 'red', weight: 4 }]
+            });
+            grupoDeRotas.addLayer(line);
+
+            // remove o controle invisível para não acumular
+            map.removeControl(control);
+        });
+
+        control.addTo(map);
+    }
+}
+
 function addMaker(trilha, iconf){ 
-    lista = [] 
-    limparMarcadores()
+    limparMarcadores();
+    const lista = [];
+
     for (let i = 0; i < trilha.length; i++) { 
-        var x = L.marker([trilha[i].lat, trilha[i].lng], { icon: iconf }).addTo(map); 
-        x.bindPopup(`
-             // <b>${trilha[i].nome}</b><br> // <a href="https://ribeiraoclaro.pr.gov.br/" target="_blank">Saiba mais</a> // `).openPopup(); 
-             lista.push([trilha[i].lat, trilha[i].lng]) } 
-             mapear(lista) } 
+        const x = L.marker([trilha[i].lat, trilha[i].lng], { icon: iconf }).addTo(map); 
+        x.bindPopup(`<b>${trilha[i].nome}</b><br>
+            <a href="https://ribeiraoclaro.pr.gov.br/" target="_blank">Saiba mais</a>`); 
+        lista.push([trilha[i].lat, trilha[i].lng]);
+    }
+
+    mapear(lista);
+}
 
 function limparMarcadores() {
     map.eachLayer(function(layer) {
@@ -104,37 +152,4 @@ function limparMarcadores() {
         }
     });
 }
-             
-let rotaControls = []; // guarda todas as rotas para poder limpar depois
-
-function limparRotas() {
-    rotaControls.forEach(r => map.removeControl(r));
-    rotaControls = [];
-}
-
-function mapear(lista) {
-    limparRotas();
-    for (let i = 0; i < lista.length - 1; i++) {
-        const waypoints = [
-            L.latLng(lista[i][0], lista[i][1]),
-            L.latLng(lista[i+1][0], lista[i+1][1])
-        ];
-
-        const rota = L.Routing.control({
-            waypoints: waypoints,
-            createMarker: () => null,
-            lineOptions: {
-                styles: [{ color: 'red', weight: 4 }]
-            },
-            addWaypoints: false,
-            routeWhileDragging: false,
-            draggableWaypoints: false,
-            show: false
-        }).addTo(map);
-
-        // rotaControls.push(rota);
-    }}
-
-
-
 
