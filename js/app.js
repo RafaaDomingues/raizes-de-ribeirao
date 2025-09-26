@@ -28,30 +28,57 @@ const trilhaGastronomia = [
     { nome: "Tucão", lat: -23.196665975175157, lng: -49.754784204299196 },
     { nome: "Magnata", lat: -23.198361503991475, lng: -49.757240361971014 },
     { nome: "Divino Sabor", lat: -23.19475139919245, lng: -49.75811871916535 },
-    { nome: "Chef Adriano", lat: -23.19862807608063, lng: -49.75339923498804 },
+    { nome: "Chef Adriano", lat: -23.19862807608063, lng: -49.75339923498804,ishtml:'chefadriano.html' },
     { nome: "Recanto da Cascata", lat: -23.187519684390224, lng: -49.71055479265805 },
     { nome: "Parada da Serra", lat: -23.27476717000394, lng: -49.75163014398363 },
     { nome: "Queijaria Bela Vista", lat: -23.33101479632104, lng: -49.8360618331078 }
 ];
 
+const gastronomiaIcon = L.icon({
+    iconUrl: 'asset/img/icon-gastronomia.png',
+    iconSize: [30, 35],         // largura x altura
+    iconAnchor: [9, 18],          // base central do ícone
+    popupAnchor: [0, -18]          // popup acima do ícone
+});
 
-function horaAventura(tipo){
+
+const hospedagemIcon = L.icon({
+    iconUrl: 'asset/img/icon-hospedagem.png',
+    iconSize: [30, 35],         // largura x altura
+    iconAnchor: [9, 18],          // base central do ícone
+    popupAnchor: [0, -18]          // popup acima do ícone
+});
+
+const aventuraIcon = L.icon({
+    iconUrl: 'asset/img/icon-aventura.png',
+    iconSize: [30, 35],         // largura x altura
+    iconAnchor: [9, 18],          // base central do ícone
+    popupAnchor: [0, -18]          // popup acima do ícone
+});
+
+const rota = document.getElementById("rota")
+rota.addEventListener("change", () => {
+    const tipoSelecionado = rota.value;
+    horaAventura(tipoSelecionado);
+});
+
+function horaAventura(tipo) {
     switch (tipo) {
-  case "trilhaAventura":
-    console.log("Hoje é segunda-feira.");
-    break;
-  case "TrilhaHospedagem":
-    console.log("Hoje é terça-feira.");
-    break;
-  case "TrilhaGastronomia":
-    addGastronomiaMaker();
-    break;
+        case "TrilhaAventura":
+            addMaker(trilhaAventura, iconf = aventuraIcon);
+            break;
+        case "TrilhaHospedagem":
+            addMaker(trilhaHospedagem, iconf = hospedagemIcon);
+            break;
+        case "TrilhaGastronomia":
+            addMaker(trilhaGastronomia, iconf = gastronomiaIcon);
+            break;
+    }
 }
-}
 
 
 
-const map = L.map('map' ).setView([-23.1939, -49.7578],15) 
+const map = L.map('map').setView([-23.1939, -49.7578], 15)
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -59,66 +86,78 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
-const gastronomiaIcon = L.icon({
-  iconUrl: 'asset/img/icon-gastronomia.png',
-  iconSize:     [30, 35],         // largura x altura
-  iconAnchor:   [9, 18],          // base central do ícone
-  popupAnchor:  [0, -18]          // popup acima do ícone
-});
 
+let grupoDeRotas = L.layerGroup().addTo(map);
 
-
-function addGastronomiaMaker(){
-    lista =[]
-    for(let i = 0; i < trilhaGastronomia.length; i++) {
-     var x = L.marker([trilhaGastronomia[i].lat,trilhaGastronomia[i].lng],{ icon: gastronomiaIcon }).addTo(map);
-        x.bindPopup(`
-        //   <b>${trilhaGastronomia[i].nome}</b><br>
-        //   <a href="https://ribeiraoclaro.pr.gov.br/" target="_blank">Saiba mais</a>
-        // `).openPopup();
-        lista.push([trilhaGastronomia[i].lat,trilhaGastronomia[i].lng])
-    }
-    mapear(lista)
+function limparRotas() {
+    grupoDeRotas.clearLayers();
 }
-
-
 
 function mapear(lista) {
-    const waypoints = lista.map(coord => L.latLng(coord[0], coord[1]));
-    L.Routing.control({
-        waypoints: waypoints,
-        createMarker: () => null,
-        lineOptions: {
-            styles: [{ color: 'red', weight: 4 }]
-        },
-        addWaypoints: false,
-        routeWhileDragging: false,
-        draggableWaypoints: false,
-        show: false
-    }).addTo(map);
+    limparRotas();
+
+    for (let i = 0; i < lista.length - 1; i++) {
+        const waypoints = [
+            L.latLng(lista[i][0], lista[i][1]),
+            L.latLng(lista[i+1][0], lista[i+1][1])
+        ];
+
+        const control = L.Routing.control({
+            waypoints: waypoints,
+            createMarker: () => null,
+            addWaypoints: false,
+            routeWhileDragging: false,
+            draggableWaypoints: false,
+            show: false,
+            router: L.Routing.osrmv1({
+        serviceUrl: 'https://router.project-osrm.org/route/v1',
+        alternatives: false   // força rota única
+    })
+        });
+
+        // quando a rota for encontrada, desenha a linha
+        control.on('routesfound', function(e) {
+            const route = e.routes[0];
+            const line = L.Routing.line(route, {
+                styles: [{ color: 'red', weight: 4 }]
+            });
+            grupoDeRotas.addLayer(line);
+
+            // remove o controle invisível para não acumular
+            map.removeControl(control);
+        });
+
+        control.addTo(map);
+    }
 }
 
+function addMaker(trilha, iconf){ 
+    limparMarcadores();
+    const lista = [];
 
-horaAventura('TrilhaGastronomia')
+    for (let i = 0; i < trilha.length; i++) { 
+        const x = L.marker([trilha[i].lat, trilha[i].lng], { icon: iconf }).addTo(map); 
+        x.bindPopup(`<b>${trilha[i].nome}</b><br>
+            <a href=${getHtml(trilha[i])}>Saiba mais</a>`); 
+        lista.push([trilha[i].lat, trilha[i].lng]);
+    }
 
-// pontoA.bindPopup(`
-//   <b>Cascata</b><br>
-//   <a href="https://ribeiraoclaro.pr.gov.br/" target="_blank">Saiba mais</a>
-// `).openPopup();
+    mapear(lista);
+}
 
+function getHtml(x){
+    if((!('ishtml' in x))){
+        return 'https://ribeiraoclaro.pr.gov.br/'
+    }else{
+        return x.ishtml
+    }
+}
 
-// var popup = L.popup();
-
-// function onMapClick(e) {
-//     popup
-//         .setLatLng(e.latlng)
-//         .setContent("Anota as cordenadas: " + e.latlng.toString())
-//         .openOn(map);
-// }
-
-// map.on('click', onMapClick);
-
-
-
-
+function limparMarcadores() {
+    map.eachLayer(function(layer) {
+        if (layer instanceof L.Marker) {
+            map.removeLayer(layer);
+        }
+    });
+}
 
