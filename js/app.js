@@ -28,7 +28,7 @@ const trilhaGastronomia = [
     { nome: "Tucão", lat: -23.196665975175157, lng: -49.754784204299196 },
     { nome: "Magnata", lat: -23.198361503991475, lng: -49.757240361971014 },
     { nome: "Divino Sabor", lat: -23.19475139919245, lng: -49.75811871916535 },
-    { nome: "Chef Adriano", lat: -23.19862807608063, lng: -49.75339923498804 },
+    { nome: "Chef Adriano", lat: -23.19862807608063, lng: -49.75339923498804,ishtml:'chefadriano.html' },
     { nome: "Recanto da Cascata", lat: -23.187519684390224, lng: -49.71055479265805 },
     { nome: "Parada da Serra", lat: -23.27476717000394, lng: -49.75163014398363 },
     { nome: "Queijaria Bela Vista", lat: -23.33101479632104, lng: -49.8360618331078 }
@@ -138,11 +138,19 @@ function addMaker(trilha, iconf){
     for (let i = 0; i < trilha.length; i++) { 
         const x = L.marker([trilha[i].lat, trilha[i].lng], { icon: iconf }).addTo(map); 
         x.bindPopup(`<b>${trilha[i].nome}</b><br>
-            <a href="https://ribeiraoclaro.pr.gov.br/" target="_blank">Saiba mais</a>`); 
+            <a href=${getHtml(trilha[i])}>Saiba mais</a>`); 
         lista.push([trilha[i].lat, trilha[i].lng]);
     }
 
     mapear(lista);
+}
+
+function getHtml(x){
+    if((!('ishtml' in x))){
+        return 'https://ribeiraoclaro.pr.gov.br/'
+    }else{
+        return x.ishtml
+    }
 }
 
 function limparMarcadores() {
