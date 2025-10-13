@@ -35,7 +35,7 @@ const trilhaGastronomia = [
 ];
 
 const gastronomiaIcon = L.icon({
-    iconUrl: 'asset/img/icon-gastronomia.png',
+    iconUrl: '../assets/img/icon-gastronomia.png',
     iconSize: [30, 35],         // largura x altura
     iconAnchor: [9, 18],          // base central do ícone
     popupAnchor: [0, -18]          // popup acima do ícone
@@ -43,14 +43,14 @@ const gastronomiaIcon = L.icon({
 
 
 const hospedagemIcon = L.icon({
-    iconUrl: 'asset/img/icon-hospedagem.png',
+    iconUrl: '../assets/img/icon-hospedagem.png',
     iconSize: [30, 35],         // largura x altura
     iconAnchor: [9, 18],          // base central do ícone
     popupAnchor: [0, -18]          // popup acima do ícone
 });
 
 const aventuraIcon = L.icon({
-    iconUrl: 'asset/img/icon-aventura.png',
+    iconUrl: '../assets/img/icon-aventura.png',
     iconSize: [30, 35],         // largura x altura
     iconAnchor: [9, 18],          // base central do ícone
     popupAnchor: [0, -18]          // popup acima do ícone
