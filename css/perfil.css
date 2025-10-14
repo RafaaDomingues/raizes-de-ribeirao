@@ -57,28 +57,6 @@ header {
   font-size: 1rem;
 }
 
-
-input[type="submit"]:active {
-  transform: translateY(2px);
-  box-shadow: none;
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--header-color);
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-
-}
-
-
-input[type="submit"]:hover {
-  background-color: var(--cor-botoes);
-}
-
 .formulario p {
   margin: 15px 0;
   color: #555;
@@ -92,4 +70,21 @@ input[type="submit"]:hover {
 
 .formulario a:hover {
   text-decoration: underline;
+}
+
+.formulario button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--cor-titulo);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario button:hover {
+  background-color: var(--cor-botoes);
 }

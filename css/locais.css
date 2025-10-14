@@ -63,7 +63,6 @@ main {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* ======== INFORMAÇÕES ======== */
 .info {
   flex: 2;
   color: #1d1d1d;
@@ -82,3 +81,30 @@ main {
   font-size: 1rem;
   line-height: 1.5;
 }
+
+ .horarios {
+    width: 100%;
+    max-width: 400px;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .horarios th, .horarios td {
+    padding: 10px 15px;
+    text-align: left;
+  }
+
+  .horarios thead {
+    background-color: var(--header-color); 
+    color: white;
+  }
+
+  .horarios tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .horarios tbody tr:hover {
+    background-color: #e0f2e9;
+  }
