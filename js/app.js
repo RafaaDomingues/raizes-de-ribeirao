@@ -12,7 +12,7 @@ const trilhaHospedagem = [
     { nome: "Pousada Victor", lat: -23.197607, lng: -49.757993, ishtml:'pousada_vitor.html' },
     { nome: "Pousada Ruvina", lat: -23.280173, lng: -49.806206 },
     { nome: "Ilha do Béca", lat: -23.186667, lng: -49.684243, ishtml:'ilha_do_beca.html' },
-    { nome: "Ilha 54", lat: -23.168182, lng: -49.683743, ishtml:'ilha54.html' },
+    { nome: "Ilha 54", lat: -23.186092756308412 , lng: -49.68374000501994, ishtml:'ilha54.html' },
     { nome: "Villa Bueno", lat: -23.183964, lng: -49.683397, ishtml:'vila_bueno.html' },
     { nome: "Rancho da Colina", lat: -23.180217, lng: -49.693027 },
     { nome: "Marina Angra", lat: -23.183418, lng: -49.700253 },
